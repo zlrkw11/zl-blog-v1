@@ -14,10 +14,10 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "zl",
+        text: "go to",
         items: [
-          { text: "Markdown Examples", link: "/zl" },
-          { text: "Runtime API Examples", link: "/api-examples" },
+          { text: "personal page", link: "/zl" },
+          { text: "blogs", link: "/blogs/" },
         ],
       },
     ],
