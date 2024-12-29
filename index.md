@@ -4,23 +4,7 @@ layout: home
 
 hero:
   name: "zl's blogging website"
-  text: ""
-  tagline: leave anything
-  actions:
-    - theme: brand
-      text: 
-      link: /zl
-    - theme: alt
-      text: 
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  tagline: personal blogging site
 
 
 ---
