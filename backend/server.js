@@ -15,4 +15,19 @@ mongoose
   .then(() => console.log("connected to mongodb"))
   .catch((err) => console.log("mongodb connection error:", err));
 
+const blogPostSchema = new mongoose.Schema({
+  title: String,
+  content: String,
+  date: { type: Date, default: Date.now },
+});
+
+app.get("/api/posts", async (req, res) => {
+  try {
+    const posts = await BlogPost.find();
+    res.join(posts);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 app.listen(PORT, () => console.log("server running on port", PORT));
