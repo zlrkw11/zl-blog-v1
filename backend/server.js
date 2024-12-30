@@ -30,4 +30,17 @@ app.get("/api/posts", async (req, res) => {
   }
 });
 
+app.post("/api/posts", async (req, res) => {
+  const post = new BlogPost({
+    title: req.body.title,
+    content: req.body.content,
+  });
+  try {
+    const newPost = await post.save();
+    res.status(201).json(newPost);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
 app.listen(PORT, () => console.log("server running on port", PORT));
