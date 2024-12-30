@@ -21,10 +21,12 @@ const blogPostSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
 });
 
+const BlogPost = mongoose.model("BlogPost", blogPostSchema);
+
 app.get("/api/posts", async (req, res) => {
   try {
     const posts = await BlogPost.find();
-    res.join(posts);
+    res.json(posts);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
