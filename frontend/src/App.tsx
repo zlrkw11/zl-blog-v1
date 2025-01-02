@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Navbar from "./components/navbar";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <div className="flex flex-col h-[400px] w-screen border-2 justify-center items-center">
         <h1>post a blog</h1>
         <form
