@@ -49,6 +49,14 @@ function App() {
           ></textarea>
           <button type="submit">Add post</button>
         </form>
+        <div>
+          {posts.map((post) => (
+            <div key={post._id}>
+              <h2>{post.title}</h2>
+              <p>{post.content}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
