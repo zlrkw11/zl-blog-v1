@@ -53,10 +53,10 @@ function App() {
           <button type="submit">Add post</button>
         </form>
       </div>
-      <div>
+      <div className="w-[600px] ml-4 gap-8 flex">
         {posts.map((post) => (
           <div key={post._id}>
-            <h2>{post.title}</h2>
+            <h2 className="font-bold">{post.title}</h2>
             <p>{post.content}</p>
           </div>
         ))}
