@@ -20,8 +20,8 @@ function Home() {
 
   return (
     <>
-      <Timer />
       <div className="flex flex-col h-[400px] w-screen border-2 justify-center items-center">
+        <Timer />
         <h1>post a blog</h1>
         <form
           onSubmit={handleSubmit}
