@@ -1,19 +1,8 @@
 import { useState, useEffect } from "react";
-import Navbar from "./components/navbar";
-
+import Timer from "./components/Timer";
 function Home() {
-  const [posts, setPosts] = useState([]);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  const fetchPosts = async () => {
-    const res = await fetch("http://localhost:5000/api/posts");
-    const data = await res.json();
-    setPosts(data);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,12 +15,12 @@ function Home() {
     if (res.ok) {
       setTitle("");
       setContent("");
-      fetchPosts();
     }
   };
 
   return (
     <>
+      <Timer />
       <div className="flex flex-col h-[400px] w-screen border-2 justify-center items-center">
         <h1>post a blog</h1>
         <form
@@ -53,14 +42,6 @@ function Home() {
           ></textarea>
           <button type="submit">Add post</button>
         </form>
-      </div>
-      <div className="w-[600px] ml-4 gap-8 flex">
-        {posts.map((post) => (
-          <div key={post._id}>
-            <h2 className="font-bold">{post.title}</h2>
-            <p>{post.content}</p>
-          </div>
-        ))}
       </div>
     </>
   );
