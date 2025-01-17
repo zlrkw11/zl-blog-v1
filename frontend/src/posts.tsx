@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const Posts = () => {
   const [posts, setPosts] = useState([]);
   const fetchPosts = async () => {
@@ -15,8 +16,9 @@ const Posts = () => {
       <div className="w-[600px] ml-4 gap-8 flex">
         {posts.map((post) => (
           <div key={post._id}>
-            <h2 className="font-bold">{post.title}</h2>
-            <p>{post.content}</p>
+            <Link to={`/post/${post._id}`}>
+              <h2 className=" hover:text-blue-500">{post.title}</h2>
+            </Link>
           </div>
         ))}
       </div>
