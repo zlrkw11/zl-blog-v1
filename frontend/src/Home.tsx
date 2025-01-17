@@ -20,21 +20,22 @@ function Home() {
 
   return (
     <>
-      <div className="flex flex-col h-[400px] w-screen border-2 justify-center items-center">
-        <Timer />
-        <h1>post a blog</h1>
+      <div className="flex flex-col h-[400px] w-screen border-2 justify-center items-center gap-4">
+        <h1 className="text-2xl text-blue-600">Post a blog</h1>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col w-[200px] gap-4 mt-8"
         >
           <input
             type="text"
+            className="py-2 border hover:border border-blue-400 rounded-md mb-4 outline-0"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Title"
             required
           />
           <textarea
+            className="py-2 hover:border border border-blue-400 rounded-md mb-4 outline-0"
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Content"
