@@ -7,10 +7,12 @@ const Post = () => {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const res = await fetch(`http://localhost:5000/api/posts/${id}`);
+      const res = await fetch(`http://localhost:5000/posts/${id}`);
       const data = await res.json();
       setPost(data);
     };
+
+    fetchPost();
   }, [id]);
 
   if (!post) return <div>Loading... post_id:{id}</div>;
@@ -21,4 +23,5 @@ const Post = () => {
     </div>
   );
 };
+
 export default Post;
